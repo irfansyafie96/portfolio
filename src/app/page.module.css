@@ -5,12 +5,16 @@
 }
 
 .title {
+  margin-top: 3rem;
   text-align: center;
   color: var(--color-espresso);
   font-weight: bold;
   font-family: var(--font-primary);
   font-size: 3rem;
   overflow: hidden;
+  text-shadow:
+    0 0 10px var(--color-cyan),
+    0 0 20px var(--color-cyan);
 }
 
 .animateText {
@@ -20,17 +24,16 @@
 }
 .staticText {
   display: inline;
-  /* No animation - just static text */
 }
 
 @keyframes pixelReveal {
   0%,
   40% {
-    clip-path: inset(0 100% 0 0); /* Hidden */
+    clip-path: inset(0 100% 0 0);
   }
   60%,
   100% {
-    clip-path: inset(0 0 0 0); /* Visible */
+    clip-path: inset(0 0 0 0);
   }
 }
 
@@ -47,6 +50,10 @@
   height: 150px;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.photo img:hover {
+  transform: rotate(180deg);
 }
 
 .intro {
@@ -71,4 +78,76 @@
   gap: 2rem;
   max-width: 700px;
   margin: 0 auto;
+}
+
+/* Social Icons Container - not absolute */
+.socialIcons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding-bottom: 2rem;
+  padding-right: 1rem;
+}
+
+.iconGithub,
+.iconLinkedin {
+  font-size: 48px;
+  color: var(--color-espresso);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.iconGithub {
+  transform: rotate(400deg);
+}
+
+.iconGithub:hover {
+  transform: rotate(-30deg);
+}
+
+.iconLinkedin {
+  transform: rotate(320deg);
+}
+
+.iconLinkedin:hover {
+  transform: rotate(15deg);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .main {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  .profile {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .photo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .socialIcons {
+    margin-top: 2rem;
+  }
+
+  .iconGithub,
+  .iconLinkedin {
+    font-size: 40px;
+  }
 }

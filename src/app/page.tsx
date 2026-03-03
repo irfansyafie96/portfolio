@@ -1,5 +1,6 @@
 import Card from "../components/Card";
 import styles from "./page.module.css";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -34,6 +35,18 @@ export default function Home() {
           description="I have done some small projects during my free and uni time. Feel free to look over my projects here."
           href="/projects"
         />
+      </div>
+
+      <div className={styles.socialIcons}>
+        <a href="https://github.com/irfansyafie96" target="_blank">
+          <FaGithub className={styles.iconGithub} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/irfan-syafie-427b92281/"
+          target="_blank"
+        >
+          <FaLinkedin className={styles.iconLinkedin} />
+        </a>
       </div>
     </main>
   );

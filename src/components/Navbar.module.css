@@ -1,4 +1,5 @@
-.navbar {
+/* ===== DESKTOP: Horizontal Navbar ===== */
+.desktopNav {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,21 +8,100 @@
   gap: 2rem;
   padding: 1rem 2rem;
   background: var(--color-espresso);
-  border-bottom: var(--color-espresso);
   z-index: 1000;
 }
 
-.navLink {
+/* Hide on mobile, show on desktop */
+@media (min-width: 769px) {
+  .orb,
+  .mobileMenu {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+}
+
+/* ===== NAV LINK STYLES (shared) ===== */
+.navLink,
+.menuItem {
   color: var(--color-white);
   font-family: var(--font-primary);
   font-size: 1.1rem;
   text-decoration: none;
   padding: 0.25rem 0.5rem;
 }
-
 .navLink:hover,
+.menuItem:hover,
 .active {
   color: var(--color-black);
-  background: var(--color-vanilla-custard);
-  box-shadow: 0 0 15px var(--color-vanilla-custard);
+  background: var(--color-cyan);
+}
+
+/* ===== MOBILE: Orb Button ===== */
+.orb {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-espresso);
+  cursor: pointer;
+  z-index: 1001;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .orb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.orb:hover {
+  transform: scale(1.1);
+}
+
+.orbIcon {
+  color: var(--color-cyan);
+  line-height: 1;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.orbIcon.open {
+  transform: rotate(90deg);
+}
+
+/* ===== MOBILE: Slide-out Menu ===== */
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 100px;
+  left: 30px;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .mobileMenu {
+    display: none;
+  }
+  
+  .mobileMenu.menuOpen {
+    display: flex;
+  }
+}
+
+.menuItem {
+  display: block;
+  background: var(--color-black);
+  border: 1px solid var(--color-cyan);
+  border-radius: 8px;
+  padding: 12px 20px;
 }
