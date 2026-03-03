@@ -1,27 +1,21 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* === KEEP: reset styles === */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  /* Color variables */
+  --color-espresso: #55251d;
+  --color-vanilla-custard: #ebd494;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-evergreen: #0a210f;
+
+  /* Font variables */
+  --font-primary: "Ubuntu", sans-serif;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -35,8 +29,50 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* === CRT EFFECT LAYER (SCANLINES) === */
+.crt::before {
+  /* before and after pseudo-elements are used to create layers on top of the content without needing extra HTML elements */
+  content: " ";
+  display: block;
+  position: fixed;
+  /* Make the layer cover the entire viewport */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* 
+  This creates one 'tile' of the scanline pattern. 
+  Since background-size is 8px, the 50% marks represent 4px.
+  */
+  background: linear-gradient(
+    to bottom,
+    /* Start Transparent at the top (0px) */ rgba(255, 200, 0, 0) 0%,
+    /* Stay Transparent until the middle (4px) */ rgba(255, 200, 0, 0) 50%,
+    /* At 4px, instantly switch to Amber tint */ rgba(255, 200, 0, 0.1) 50%,
+    /* Stay Amber until the bottom of the tile (8px) */ rgba(255, 200, 0, 0.1)
+      100%
+  );
+  /* Set the size of the background to 8px height, so it repeats every 8px vertically */
+  background-size: 100% 8px;
+  z-index: 998;
+  /* Allow clicks to pass through this layer so it doesn't interfere with interactions */
+  pointer-events: none;
+}
+
+.crt::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* This creates a subtle vignette effect to darken the edges of the screen */
+  background: radial-gradient(
+    ellipse at center,
+    transparent 85%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  z-index: 999;
+  pointer-events: none;
 }

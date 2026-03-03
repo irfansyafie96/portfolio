@@ -1,0 +1,27 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background: var(--color-espresso);
+  border-bottom: var(--color-espresso);
+  z-index: 1000;
+}
+
+.navLink {
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+}
+
+.navLink:hover,
+.active {
+  color: var(--color-black);
+  background: var(--color-vanilla-custard);
+  box-shadow: 0 0 15px var(--color-vanilla-custard);
+}
