@@ -24,8 +24,8 @@ export default function Card({ title, description, href }: CardProps) {
     const centerY = rect.height / 2;
 
     // Adjust the tilt sensitivity by dividing the angles by a factor (e.g., 10)
-    const tiltX = (y - centerY) / 10;
-    const tiltY = (centerX - x) / 10;
+    const tiltX = (centerY - y) / 10;
+    const tiltY = (x - centerX) / 10;
 
     // Apply the tilt effect using CSS transform
     card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.02)`;
