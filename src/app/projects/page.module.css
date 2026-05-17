@@ -1,0 +1,140 @@
+.main {
+  min-height: 100vh;
+  padding: 6rem 2rem 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.masthead {
+  padding: 1rem 0 1.25rem;
+  margin-bottom: 1.75rem;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: var(--font-primary);
+  color: var(--color-espresso);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.titleText {
+}
+
+.cursor {
+  color: var(--color-espresso);
+  animation: blink 1s step-end infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.filterRow {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  font-family: var(--font-primary);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+  border: 1.5px solid var(--color-espresso);
+  background: transparent;
+  padding: 0.375rem 0.875rem;
+  cursor: pointer;
+  color: var(--color-espresso);
+  border-radius: 16px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.filterBtn:hover {
+  background: var(--color-espresso);
+  color: #f5f2eb;
+}
+
+.filterBtnActive {
+  background: var(--color-espresso);
+  color: #f5f2eb;
+}
+
+.filterHint {
+  font-size: 0.875rem;
+  color: var(--color-espresso);
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1.5px solid #1a1a1a;
+  border-left: 1.5px solid #1a1a1a;
+}
+
+.pullQuote {
+  grid-column: span 2;
+  border-right: 1.5px solid #1a1a1a;
+  border-bottom: 1.5px solid #1a1a1a;
+  padding: 1.5rem 1.25rem;
+  background: var(--color-espresso);
+  position: relative;
+  z-index: 1000;
+}
+
+.pullQuote p {
+  font-family: Georgia, serif;
+  font-size: 1.125rem;
+  font-style: italic;
+  color: #f5f2eb;
+  line-height: 1.6;
+}
+
+.pullQuote cite {
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  color: #888;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 5rem 1rem 3rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pullQuote {
+    grid-column: span 1;
+  }
+}

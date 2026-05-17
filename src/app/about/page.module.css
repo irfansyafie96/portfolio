@@ -11,64 +11,6 @@
   font-weight: bold;
   font-family: var(--font-primary);
   font-size: 3rem;
-  text-shadow:
-    0 0 10px var(--color-cyan),
-    0 0 20px var(--color-cyan),
-    0 0 40px var(--color-cyan);
-  animation: flickerGlow 4s infinite;
-}
-
-@keyframes flickerGlow {
-  0%, 100% {
-    text-shadow:
-      0 0 10px var(--color-cyan),
-      0 0 20px var(--color-cyan),
-      0 0 40px var(--color-cyan);
-  }
-  5% {
-    text-shadow:
-      0 0 5px var(--color-cyan),
-      0 0 10px var(--color-cyan);
-  }
-  10% {
-    text-shadow:
-      0 0 10px var(--color-cyan),
-      0 0 20px var(--color-cyan),
-      0 0 40px var(--color-cyan);
-  }
-  15% {
-    text-shadow:
-      0 0 3px var(--color-cyan),
-      0 0 8px var(--color-cyan);
-  }
-  20% {
-    text-shadow:
-      0 0 10px var(--color-cyan),
-      0 0 20px var(--color-cyan),
-      0 0 40px var(--color-cyan);
-  }
-  50% {
-    text-shadow:
-      0 0 8px var(--color-cyan),
-      0 0 15px var(--color-cyan);
-  }
-  55% {
-    text-shadow:
-      0 0 10px var(--color-cyan),
-      0 0 20px var(--color-cyan),
-      0 0 40px var(--color-cyan);
-  }
-  80% {
-    text-shadow:
-      0 0 6px var(--color-cyan),
-      0 0 12px var(--color-cyan);
-  }
-  85% {
-    text-shadow:
-      0 0 10px var(--color-cyan),
-      0 0 20px var(--color-cyan),
-      0 0 40px var(--color-cyan);
-  }
 }
 
 /* Intro Section */
