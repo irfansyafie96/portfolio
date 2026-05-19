@@ -7,9 +7,10 @@ interface CardProps {
   title: string;
   description: string;
   href: string;
+  compact?: boolean;
 }
 
-export default function Card({ title, description, href }: CardProps) {
+export default function Card({ title, description, href, compact }: CardProps) {
   const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
     // Get the card element and its dimensions
     const card = e.currentTarget;
@@ -40,7 +41,7 @@ export default function Card({ title, description, href }: CardProps) {
   return (
     <Link
       href={href}
-      className={styles.card}
+      className={`${styles.card} ${compact ? styles.cardCompact : ""}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >

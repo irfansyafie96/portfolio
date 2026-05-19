@@ -1,0 +1,41 @@
+.main {
+  min-height: 100vh;
+  padding: 5rem 2rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.title {
+  margin-top: 3rem;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: var(--font-primary);
+  color: var(--color-espresso);
+  text-align: center;
+  text-transform: lowercase;
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
